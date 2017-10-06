@@ -28,7 +28,7 @@ class FormInput extends Component {
     const hasError = touched && Boolean(error);
 
     if (readOnly) {
-      return <span className="read-only">{input.value.toLocaleString()}</span>;
+      return <span className="read-only">{input && input.value && input.value.toLocaleString()}</span>;
     }
 
     return (
