@@ -1,3 +1,3 @@
 import FormInput from './components/FormInput';
-
-export { FormInput };
+import * as fieldValidators from './utils/fieldValidators';
+export { FormInput, fieldValidators };

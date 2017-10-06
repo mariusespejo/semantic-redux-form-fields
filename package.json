@@ -6,7 +6,9 @@
   "scripts": {
     "watch": "cross-env NODE_ENV=development webpack -w",
     "build:dev": "cross-env NODE_ENV=development webpack",
-    "build:production": "cross-env NODE_ENV=production webpack -p"
+    "build:production": "cross-env NODE_ENV=production webpack -p",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -31,8 +33,15 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-styleguidist": "^6.0.27",
+    "redux": "^3.7.2",
+    "redux-form": "^7.1.0",
+    "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.74.2",
     "webpack": "^3.6.0"
   },

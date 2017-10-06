@@ -22,33 +22,38 @@ class FormInput extends Component {
       defaultValue,
       required,
       errorPosition,
+      inline,
       ...rest
     } = this.props;
 
     const hasError = touched && Boolean(error);
 
     if (readOnly) {
-      return <span className="read-only">{input && input.value && input.value.toLocaleString()}</span>;
+      return (
+        <span className="read-only">
+          {input && input.value && input.value.toLocaleString()}
+        </span>
+      );
     }
 
     return (
-      <Form.Field error={hasError} width={width || 10} required={required}>
+      <Form.Field
+        error={hasError}
+        width={width}
+        required={required}
+        style={{ position: 'relative' }}
+        inline={inline}
+      >
         {label && <label>{label}</label>}
-        <Input {...input} {...rest} value={input.value || ''} />
+        <Input
+          {...input}
+          {...rest}
+          value={input.value || ''}
+          error={hasError}
+        />
 
         {hasError && (
-          <Label
-            pointing={errorPosition === 'right' ? 'left' : true}
-            style={
-              errorPosition === 'right'
-                ? {
-                    position: 'absolute',
-                    width: 150,
-                    top: error.length > 25 ? 0 : 5
-                  }
-                : {}
-            }
-          >
+          <Label pointing={inline ? 'left' : true}>
             {error}
           </Label>
         )}
