@@ -8,7 +8,8 @@
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:production": "cross-env NODE_ENV=production webpack -p",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "prepublishOnly": "npm run build:production"
   },
   "repository": {
     "type": "git",
