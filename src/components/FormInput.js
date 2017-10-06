@@ -21,8 +21,8 @@ class FormInput extends Component {
       label,
       defaultValue,
       required,
-      errorPosition,
       inline,
+      errorMessageStyle,
       ...rest
     } = this.props;
 
@@ -41,7 +41,6 @@ class FormInput extends Component {
         error={hasError}
         width={width}
         required={required}
-        style={{ position: 'relative' }}
         inline={inline}
       >
         {label && <label>{label}</label>}
@@ -53,7 +52,7 @@ class FormInput extends Component {
         />
 
         {hasError && (
-          <Label pointing={inline ? 'left' : true}>
+          <Label className="error-message" pointing={inline ? 'left' : true} style={errorMessageStyle}>
             {error}
           </Label>
         )}
