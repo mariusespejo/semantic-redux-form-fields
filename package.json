@@ -1,0 +1,24 @@
+{
+  "name": "semantic-redux-form-fields",
+  "version": "0.1.0",
+  "description": "A set of form field components combining Semantic UI React and Redux Form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariusespejo/semantic-redux-form-fields.git"
+  },
+  "keywords": [
+    "semantic-ui",
+    "redux-form",
+    "react"
+  ],
+  "author": "Marius Espejo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mariusespejo/semantic-redux-form-fields/issues"
+  },
+  "homepage": "https://github.com/mariusespejo/semantic-redux-form-fields#readme"
+}
