@@ -3,41 +3,37 @@ import ReactDOM from 'react-dom';
 import { Form, Label, Input } from 'semantic-ui-react';
 
 class FormInput extends Component {
-  handleChange = event => {
-    const { value } = event.target;
-
-    this.props.input.onChange(value);
-  };
-
   componentWillReceiveProps(nextProps) {
-    const { input: { value, onChange }, defaultValue } = nextProps;
-    if (!value && defaultValue) onChange(defaultValue);
+    const {
+      input: { value, onChange },
+      meta: { visited },
+      defaultValue
+    } = nextProps;
+    if (!value && !visited && defaultValue) onChange(defaultValue);
   }
 
   render() {
     const {
-      input: { name, onBlur, value },
+      input,
       meta: { error, touched },
       readOnly,
       width,
+      label,
       defaultValue,
+      required,
       ...rest
     } = this.props;
 
     const hasError = touched && Boolean(error);
 
     if (readOnly) {
-      return <span className="read-only">{value}</span>;
+      return <span className="read-only">{input.value}</span>;
     }
 
     return (
-      <Form.Field onBlur={onBlur} error={hasError} width={width || 10}>
-        <Input
-          name={name}
-          value={value}
-          onChange={this.handleChange}
-          {...rest}
-        />
+      <Form.Field error={hasError} width={width || 10} required={required}>
+        {label && <label>{label}</label>}
+        <Input {...input} {...rest} />
 
         {hasError && <Label pointing={true}>{error}</Label>}
       </Form.Field>
