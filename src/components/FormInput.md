@@ -7,10 +7,6 @@ const { Field, reduxForm } = require('redux-form');
 const fieldValidators = require('../utils/fieldValidators');
 
 class Example extends React.Component {
-  constructor() {
-    super();
-    this.state = { value: 'value' };
-  }
   render() {
     return (
         <Form>
@@ -43,10 +39,6 @@ const { Field, reduxForm } = require('redux-form');
 const fieldValidators = require('../utils/fieldValidators');
 
 class Example extends React.Component {
-  constructor() {
-    super();
-    this.state = { value: 'value' };
-  }
   render() {
     return (
         <Form>
