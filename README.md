@@ -1,2 +1,43 @@
 # semantic-redux-form-fields
 A set of form field components combining Semantic UI React and Redux Form
+
+## Installation
+To install, run `npm install --save semantic-redux-form-fields`. 
+
+## Demo
+https://mariusespejo.github.io/semantic-redux-form-fields/index.html
+
+## Usage
+To use one of the form fields, import it and use it as the value for redux-form's `Field` [component prop](https://redux-form.com/7.0.4/docs/api/field.md/#-code-component-component-function-string-code-required-). This assumes that you've already [set up redux-form](https://redux-form.com/7.0.4/docs/gettingstarted.md/) and [semantic-ui-react](https://react.semantic-ui.com/usage).
+
+The example below shows a simple form example with a single field using the `FormInput` component.
+
+```javascript
+import React from 'react';
+import CodeHighlight from 'code-highlight';
+import { Form } from 'semantic-ui-react';
+import { Field, reduxForm } from 'redux-form';
+import { FormInput, fieldValidators} from 'semantic-redux-form-fields';
+
+class Example extends React.Component {
+  render() {
+    return (
+        <Form>
+            <Field
+                component={FormInput}
+                name="fieldName" 
+                label="Label"
+                validate={fieldValidators.required}
+                defaultValue="default value"
+                width={5} />
+        </Form>
+    );
+  }
+}
+
+const ExampleForm = reduxForm({
+  form: 'formName'
+})(Example);
+
+
+```
