@@ -14,7 +14,6 @@ The example below shows a simple form example with a single field using the `For
 
 ```javascript
 import React from 'react';
-import CodeHighlight from 'code-highlight';
 import { Form } from 'semantic-ui-react';
 import { Field, reduxForm } from 'redux-form';
 import { FormInput, fieldValidators} from 'semantic-redux-form-fields';
