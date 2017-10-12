@@ -4,3 +4,4 @@ webpack.config.js
 .babelrc
 .gitignore
 package-lock.json
+coverage

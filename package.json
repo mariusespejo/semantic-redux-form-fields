@@ -20,6 +20,7 @@
       "raf/polyfill",
       "./src/setupTests.js"
     ],
+    "collectCoverage": true,
     "coverageDirectory": "./coverage/",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
