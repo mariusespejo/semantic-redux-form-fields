@@ -4,12 +4,22 @@
   "description": "A set of form field components combining Semantic UI React and Redux Form",
   "main": "lib/index.js",
   "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "watch": "cross-env NODE_ENV=development webpack -w",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:production": "cross-env NODE_ENV=production webpack -p",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "prepublishOnly": "npm run build:production"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "setupFiles": [
+      "raf/polyfill",
+      "./src/setupTests.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,11 +45,16 @@
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "file-loader": "^1.1.5",
+    "jest": "^21.2.1",
+    "jest-enzyme": "^4.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-styleguidist": "^6.0.27",
+    "react-test-renderer": "^16.0.0",
     "redux": "^3.7.2",
     "redux-form": "^7.1.0",
     "semantic-ui-css": "^2.2.12",
