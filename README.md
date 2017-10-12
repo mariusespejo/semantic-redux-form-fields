@@ -1,4 +1,5 @@
-# semantic-redux-form-fields [![Build Status](https://travis-ci.org/mariusespejo/semantic-redux-form-fields.svg?branch=master)](https://travis-ci.org/mariusespejo/semantic-redux-form-fields)
+# semantic-redux-form-fields [![Build Status](https://travis-ci.org/mariusespejo/semantic-redux-form-fields.svg?branch=master)](https://travis-ci.org/mariusespejo/semantic-redux-form-fields) [![codecov](https://codecov.io/gh/mariusespejo/semantic-redux-form-fields/branch/master/graph/badge.svg)](https://codecov.io/gh/mariusespejo/semantic-redux-form-fields)
+
 A set of form field components combining Semantic UI React and Redux Form
 
 ## Installation
