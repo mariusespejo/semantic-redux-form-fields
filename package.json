@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage && codecov",
     "watch": "cross-env NODE_ENV=development webpack -w",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:production": "cross-env NODE_ENV=production webpack -p",
@@ -19,6 +19,13 @@
     "setupFiles": [
       "raf/polyfill",
       "./src/setupTests.js"
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/setupTests.js",
+      "!src/styleguide/**",
+      "!**/node_modules/"
     ]
   },
   "repository": {
@@ -43,6 +50,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "codecov": "^2.3.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.0",
