@@ -47,3 +47,11 @@ it('should render a simple value string if read only', () => {
   expect(wrapper.find(Label).length).toEqual(0);
   expect(wrapper.find('.read-only').text()).toEqual(props.input.value);
 });
+
+it('should render the field with a pre-defined default value', () => {
+  const inputProps = { ...props.input, value: undefined };
+  const wrapper = mount(<FormInput {...props} defaultValue="default" />);
+  wrapper.setProps({ ...props, input: inputProps });
+
+  expect(props.input.onChange).toHaveBeenCalledWith('default');
+});
