@@ -47,7 +47,7 @@ class FormInput extends Component {
         <Input
           {...input}
           {...rest}
-          value={input.value || ''}
+          value={(input.value || input.value === 0)  ? input.value : ''}
           error={hasError}
         />
 
