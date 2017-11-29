@@ -9,7 +9,7 @@ class FormInput extends Component {
       meta: { visited },
       defaultValue
     } = nextProps;
-    if (!value && !visited && defaultValue) onChange(defaultValue);
+    if (!value && !visited && (defaultValue || defaultValue === 0)) onChange(defaultValue);
   }
 
   render() {

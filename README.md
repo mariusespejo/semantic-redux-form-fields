@@ -41,3 +41,12 @@ const ExampleForm = reduxForm({
 
 
 ```
+
+
+
+## Developer Notes:
+
+To update the styleguide docs: 
+- delete the 'docs' directory 
+- run `npm run styleguide:build`
+- rename the 'styleguide' directory to 'docs'
