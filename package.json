@@ -1,8 +1,7 @@
 {
   "name": "semantic-redux-form-fields",
-  "version": "0.2.6",
-  "description":
-    "A set of form field components combining Semantic UI React and Redux Form",
+  "version": "0.2.7",
+  "description": "A set of form field components combining Semantic UI React and Redux Form",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
@@ -17,7 +16,10 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
-    "setupFiles": ["raf/polyfill", "./src/utils/setupTests.js"],
+    "setupFiles": [
+      "raf/polyfill",
+      "./src/utils/setupTests.js"
+    ],
     "collectCoverage": true,
     "coverageDirectory": "./coverage/",
     "collectCoverageFrom": [
@@ -32,14 +34,17 @@
     "type": "git",
     "url": "git+https://github.com/mariusespejo/semantic-redux-form-fields.git"
   },
-  "keywords": ["semantic-ui", "redux-form", "react"],
+  "keywords": [
+    "semantic-ui",
+    "redux-form",
+    "react"
+  ],
   "author": "Marius Espejo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mariusespejo/semantic-redux-form-fields/issues"
   },
-  "homepage":
-    "https://github.com/mariusespejo/semantic-redux-form-fields#readme",
+  "homepage": "https://github.com/mariusespejo/semantic-redux-form-fields#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
