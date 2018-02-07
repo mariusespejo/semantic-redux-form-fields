@@ -1,5 +1,4 @@
-#### FormInput example:
-Try deleting the value and remove focus from the input to see example validation.
+#### FormDropdown example:
 
 ```js
 const { Form } = require('semantic-ui-react');
@@ -9,21 +8,21 @@ const fieldValidators = require('../validation/fieldValidators');
 class Example extends React.Component {
   render() {
     return (
-      <Form>
-          <Field
-            component={FormInput}
-            name="fieldName" 
-            label="Label"
-            validate={fieldValidators.required}
-            defaultValue="default value"
-            width={5} />
-      </Form>
+        <Form>
+            <Field
+                component={FormDropdown}
+                name="dropdown" 
+                label="Label"
+                validate={fieldValidators.required}
+                mapStateToOptions={state => state.dropdown.values}
+                width={5} />
+        </Form>
     );
   }
 }
 
 const ExampleForm = reduxForm({
-  form: 'formName'
+  form: 'dropdown'
 })(Example);
 
 <ExampleForm />
@@ -42,21 +41,21 @@ class Example extends React.Component {
   render() {
     return (
         <Form>
-          <Field
-            component={FormInput}
-            name="fieldName" 
-            label="Label"
-            validate={fieldValidators.required}
-            inline />
+            <Field
+                component={FormDropdown}
+                name="inlineDropdown" 
+                label="Label"
+                validate={fieldValidators.required}
+                mapStateToOptions={state => state.dropdown.values}
+                inline />
         </Form>
     );
   }
 }
 
 const ExampleForm = reduxForm({
-  form: 'anotherFormName'
+  form: 'inlineDropdown'
 })(Example);
 
 <ExampleForm />
 ```
-
