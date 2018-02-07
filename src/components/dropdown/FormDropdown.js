@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import connectedDropdown from '../hoc/connectedDropdown';
+import { connectedDropdown } from '../../hoc';
 import { Form, Dropdown, Label } from 'semantic-ui-react';
 
 export const ReduxDropdown = connectedDropdown(Dropdown);

@@ -1,26 +1,26 @@
-#### FormDatePicker example:
+#### FormTextArea example:
 
 ```js
 const { Form } = require('semantic-ui-react');
 const { Field, reduxForm } = require('redux-form');
-const fieldValidators = require('../validation/fieldValidators');
+const { fieldValidators } = require('../../validation');
 
 class Example extends React.Component {
   render() {
     return (
       <Form>
           <Field
-            component={FormDatePicker}
-            name="date" 
+            component={FormTextArea}
+            name="text" 
             label="Label"
-            validate={[fieldValidators.required, fieldValidators.stringDate]} />
+            validate={fieldValidators.required} />
       </Form>
     );
   }
 }
 
 const ExampleForm = reduxForm({
-  form: 'datePickerExample'
+  form: 'textAreaExample'
 })(Example);
 
 <ExampleForm />

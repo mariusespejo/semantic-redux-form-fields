@@ -1,8 +1,6 @@
-export { default as Field } from './components/Field';
-export { default as FormInput } from './components/FormInput';
-export { default as FormDropdown } from './components/FormDropdown';
-export { default as FormDatePicker } from './components/FormDatePicker';
-export { default as FormTextArea } from './components/FormTextArea';
-
-import * as fieldValidators from './validation/fieldValidators';
-export { fieldValidators };
+export { Field, InlineField, InlineRow } from './components/field';
+export { FormInput } from './components/input';
+export { FormDropdown } from './components/dropdown';
+export { FormDatePicker } from './components/datePicker';
+export { FormTextArea } from './components/textArea';
+export { fieldValidators } from './validation/fieldValidators';

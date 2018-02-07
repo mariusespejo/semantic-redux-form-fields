@@ -5,7 +5,7 @@ The benefit of using this component is that you only have to import one field co
 ```js
 const { Form } = require('semantic-ui-react');
 const { reduxForm } = require('redux-form');
-const fieldValidators = require('../validation/fieldValidators');
+const { fieldValidators } = require('../../validation');
 
 class Example extends React.Component {
   render() {

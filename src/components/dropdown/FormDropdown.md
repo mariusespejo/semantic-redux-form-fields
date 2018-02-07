@@ -3,7 +3,7 @@
 ```js
 const { Form } = require('semantic-ui-react');
 const { Field, reduxForm } = require('redux-form');
-const fieldValidators = require('../validation/fieldValidators');
+const { fieldValidators } = require('../../validation');
 
 class Example extends React.Component {
   render() {
@@ -35,7 +35,7 @@ Try clicking on the input and remove focus without typing a value to see example
 ```js
 const { Form } = require('semantic-ui-react');
 const { Field, reduxForm } = require('redux-form');
-const fieldValidators = require('../validation/fieldValidators');
+const { fieldValidators } = require('../../validation');
 
 class Example extends React.Component {
   render() {

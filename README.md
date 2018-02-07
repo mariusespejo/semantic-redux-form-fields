@@ -46,7 +46,7 @@ Alternatively, if you want to avoid having to import redux-form's `Field` all th
 you can instead import `Field` from this library and simply specify the type like so:
 
 ```javascript
-import { Field} from 'semantic-redux-form-fields';
+import { Field } from 'semantic-redux-form-fields';
 
 <Field.Input name="fieldName" label="Label" />
 ```

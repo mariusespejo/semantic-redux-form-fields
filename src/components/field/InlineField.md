@@ -5,7 +5,7 @@ Use the `InlineField` component inside a `Grid` of size 2, if you want to use mu
 ```js
 const { Form, Grid } = require('semantic-ui-react');
 const { reduxForm } = require('redux-form');
-const fieldValidators = require('../validation/fieldValidators');
+const { fieldValidators } = require('../../validation');
 
 class Example extends React.Component {
   render() {

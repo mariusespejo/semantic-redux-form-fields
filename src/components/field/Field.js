@@ -1,8 +1,8 @@
 import React from 'react';
-import FormInput from './FormInput';
-import FormTextArea from './FormTextArea';
-import FormDatePicker from './FormDatePicker';
-import FormDropdown from './FormDropdown';
+import { FormInput } from '../input';
+import { FormTextArea } from '../textArea';
+import { FormDatePicker } from '../datePicker';
+import { FormDropdown } from '../dropdown';
 import { Field as FormField } from 'redux-form';
 
 class Field extends React.Component {
