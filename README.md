@@ -41,7 +41,13 @@ const ExampleForm = reduxForm({
 
 
 ```
+### Shorthand
+Alternatively, if you want to avoid having to import redux-form's `Field` all the time and also all the individual field types in this library, 
+you can instead import `Field` from this library and simply specify the type like so:
 
+```javascript
+<Field.Input name="fieldName" label="Label" />
+```
 
 
 ## Developer Notes:
