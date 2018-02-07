@@ -1,7 +1,8 @@
 {
   "name": "semantic-redux-form-fields",
   "version": "0.2.8",
-  "description": "A set of form field components combining Semantic UI React and Redux Form",
+  "description":
+    "A set of form field components combining Semantic UI React and Redux Form",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
@@ -12,14 +13,16 @@
     "build:production": "cross-env NODE_ENV=production webpack -p",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "prepublishOnly": "npm run build:production"
+    "prepublishOnly": "npm run build:production",
+    "precommit": "lint-staged",
+    "prepush": "npm run test"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
-    "setupFiles": [
-      "raf/polyfill",
-      "./src/utils/setupTests.js"
-    ],
+    "setupFiles": ["raf/polyfill", "./src/utils/setupTests.js"],
     "collectCoverage": true,
     "coverageDirectory": "./coverage/",
     "collectCoverageFrom": [
@@ -28,23 +31,23 @@
       "!src/utils/**",
       "!src/styleguide/**",
       "!**/node_modules/"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "identity-obj-proxy"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mariusespejo/semantic-redux-form-fields.git"
   },
-  "keywords": [
-    "semantic-ui",
-    "redux-form",
-    "react"
-  ],
+  "keywords": ["semantic-ui", "redux-form", "react"],
   "author": "Marius Espejo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mariusespejo/semantic-redux-form-fields/issues"
   },
-  "homepage": "https://github.com/mariusespejo/semantic-redux-form-fields#readme",
+  "homepage":
+    "https://github.com/mariusespejo/semantic-redux-form-fields#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -58,16 +61,20 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.6",
+    "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.2.1",
     "jest-enzyme": "^4.2.0",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "redux-mock-store": "^1.5.1",
     "react-redux": "^5.0.6",
     "react-styleguidist": "^6.2.3",
     "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
     "redux-form": "^7.2.3",
+    "redux-mock-store": "^1.5.1",
     "semantic-ui-css": "^2.2.14",
     "semantic-ui-react": "^0.78.2",
     "webpack": "^3.10.0"
@@ -76,5 +83,9 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "semantic-ui-react": "^0.78.2"
+  },
+  "dependencies": {
+    "moment": "^2.20.1",
+    "react-datepicker": "^1.1.0"
   }
 }

@@ -9,7 +9,8 @@ class FormInput extends Component {
       meta: { visited },
       defaultValue
     } = nextProps;
-    if (!value && !visited && (defaultValue || defaultValue === 0)) onChange(defaultValue);
+    if (!value && !visited && (defaultValue || defaultValue === 0))
+      onChange(defaultValue);
   }
 
   render() {
@@ -47,12 +48,16 @@ class FormInput extends Component {
         <Input
           {...input}
           {...rest}
-          value={(input.value || input.value === 0)  ? input.value : ''}
+          value={input.value || input.value === 0 ? input.value : ''}
           error={hasError}
         />
 
         {hasError && (
-          <Label className="error-message" pointing={inline ? 'left' : true} style={errorMessageStyle}>
+          <Label
+            className="error-message"
+            pointing={inline ? 'left' : true}
+            style={errorMessageStyle}
+          >
             {error}
           </Label>
         )}

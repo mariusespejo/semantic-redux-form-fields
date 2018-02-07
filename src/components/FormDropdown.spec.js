@@ -61,9 +61,7 @@ it('should render a simple value string if read only', () => {
   expect(wrapper.find(Form.Field).length).toEqual(0);
   expect(wrapper.find(ReduxDropdown).length).toEqual(0);
   expect(wrapper.find(Label).length).toEqual(0);
-  expect(wrapper.find('.read-only').text()).toEqual(
-    props.input.value
-  );
+  expect(wrapper.find('.read-only').text()).toEqual(props.input.value);
 });
 
 it('should render a form field input with error message if touched and has error', () => {
