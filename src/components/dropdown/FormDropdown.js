@@ -6,20 +6,10 @@ export const ReduxDropdown = connectedDropdown(Dropdown);
 
 class FormDropdown extends Component {
   handleChange = (e, { value, options }) => {
-    const { input: { onChange }, multiple } = this.props;
-    let valueToSave = '';
-
-    let selection = options.find(o => o.value === value);
-
-    if (!selection && multiple) {
-      selection = options.filter(o => value.includes(o.value));
-      valueToSave = selection.map(s => s.text);
-    } else {
-      valueToSave = selection.value;
-    }
-
-    onChange(valueToSave);
+    const { input: { onChange } } = this.props;
+    onChange(value);
   };
+
   render() {
     const {
       input: { name, onBlur, value },

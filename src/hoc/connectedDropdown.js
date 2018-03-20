@@ -27,29 +27,22 @@ function connectedDropdown(DropdownComponent) {
 
     findValueInOptions = options => {
       const { value, multiple, defaultSelectedLabel } = this.props;
-      if (multiple) {
-        let selection = options.filter(
-          o => value.includes(o.text) || defaultSelectedLabel === o.text
+      if (multiple && defaultSelectedLabel) {
+        const defaultOption = options.find(
+          o => o.text === defaultSelectedLabel
         );
-        return selection.map(s => s.value);
-      } else {
-        const found = options.find(o => o.value === value);
-        return found ? found.value : undefined;
-      }
-    };
-
-    getDefaultValue = options => {
-      const { value, defaultSelectedLabel, multiple } = this.props;
-
-      if (multiple && defaultSelectedLabel && value.length === 0) {
-        if (options.map(o => o.value).includes(defaultSelectedLabel)) {
-          return [defaultSelectedLabel];
+        if (value.length === 0) {
+          this.props.onChange({}, { value: [defaultOption.value], options });
+          return [defaultOption.value];
+        } else if (value && !value.includes(defaultOption.value)) {
+          return [...value, defaultOption.value];
         }
       } else if (!multiple && options.length === 1 && !value && options[0]) {
+        this.props.onChange({}, { value: options[0].value, options });
         return options[0].value;
       }
 
-      return undefined;
+      return value;
     };
 
     render() {
@@ -66,13 +59,9 @@ function connectedDropdown(DropdownComponent) {
       let options = this.selectOptionsFromState();
 
       let storedValue = multiple ? [] : '';
-      if (options.length > 0 && this.props.value) {
-        storedValue = this.findValueInOptions(options);
-      }
 
-      const defaultValue = this.getDefaultValue(options);
-      if (defaultValue) {
-        this.props.onChange({}, { value: defaultValue, options });
+      if (options.length > 0) {
+        storedValue = this.findValueInOptions(options);
       }
 
       if (options.length === 1) {
