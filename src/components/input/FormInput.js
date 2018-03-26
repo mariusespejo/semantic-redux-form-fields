@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { Form, Label, Input } from 'semantic-ui-react';
 
 class FormInput extends Component {
-  componentWillReceiveProps(nextProps) {
+  componentWillMount() {
     const {
       input: { value, onChange },
       meta: { visited },
       defaultValue
-    } = nextProps;
+    } = this.props;
     if (!value && !visited && (defaultValue || defaultValue === 0))
       onChange(defaultValue);
   }
