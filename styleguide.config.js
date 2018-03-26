@@ -6,5 +6,6 @@ module.exports = {
   components: 'src/components/**/[A-Z]*.js',
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src/styleguide/Wrapper')
-  }
+  },
+  styleguideDir: 'docs'
 };

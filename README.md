@@ -55,6 +55,5 @@ import { Field } from 'semantic-redux-form-fields';
 ## Developer Notes:
 
 To update the styleguide docs: 
-- delete the 'docs' directory 
 - run `npm run styleguide:build`
-- rename the 'styleguide' directory to 'docs'
+- make sure to push updates back to the main branch
