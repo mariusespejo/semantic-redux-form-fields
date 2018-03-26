@@ -12,7 +12,7 @@ beforeEach(() => {
       onBlur: jest.fn(),
       value: 'value'
     },
-    meta: { error: undefined, touched: false }
+    meta: { error: undefined, touched: false, visited: false }
   };
 });
 
@@ -49,9 +49,12 @@ it('should render a simple value string if read only', () => {
 });
 
 it('should render the field with a pre-defined default value', () => {
-  const inputProps = { ...props.input, value: undefined };
-  const wrapper = mount(<FormInput {...props} defaultValue="default" />);
-  wrapper.setProps({ ...props, input: inputProps });
+  const inputProps = {
+    ...props,
+    input: { ...props.input, value: '' },
+    defaultValue: 'default'
+  };
+  const wrapper = mount(<FormInput {...inputProps} />);
 
-  expect(props.input.onChange).toHaveBeenCalledWith('default');
+  expect(props.input.onChange).toHaveBeenCalledWith(inputProps.defaultValue);
 });
