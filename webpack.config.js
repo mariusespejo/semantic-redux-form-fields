@@ -13,7 +13,7 @@ const WebpackConfig = {
     libraryTarget: 'umd',
     library: 'SemanticReduxFormFields'
   },
-  externals: ['react', 'react-dom', 'semantic-ui-react', 'redux-form', 'react-datepicker'],
+  externals: ['react', 'react-dom', 'semantic-ui-react', 'redux-form', 'react-datepicker', 'react-redux', 'moment'],
   module: {
     rules: [
       {
