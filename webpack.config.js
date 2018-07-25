@@ -6,14 +6,14 @@ const APP_DIR = path.resolve(__dirname, 'src');
 
 const WebpackConfig = {
   entry: APP_DIR + '/index.js',
-
+  mode: 'production',
   output: {
     path: BUILD_DIR,
     filename: 'index.js',
     libraryTarget: 'umd',
     library: 'SemanticReduxFormFields'
   },
-
+  externals: ['react', 'react-dom', 'semantic-ui-react', 'redux-form', 'react-datepicker'],
   module: {
     rules: [
       {
@@ -31,34 +31,12 @@ const WebpackConfig = {
         use: [
           {
             loader: 'file-loader',
-            options: {} 
+            options: {}
           }
         ]
       }
     ]
   }
 };
-
-if (process.env.NODE_ENV === 'production') {
-  WebpackConfig.externals = {
-    react: 'react',
-    'react-dom': 'react-dom'
-  };
-
-  WebpackConfig.plugins = [
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true
-      },
-      compress: {
-        warnings: false,
-        screw_ie8: true
-      },
-      comments: false
-    })
-  ];
-}
 
 module.exports = WebpackConfig;
