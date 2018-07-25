@@ -16,6 +16,7 @@ class Example extends React.Component {
           label="Name"
           validate={fieldValidators.required}
           width={5}
+          required
         />
         <Field.Dropdown
           name="fieldDropdown"
@@ -23,18 +24,21 @@ class Example extends React.Component {
           validate={fieldValidators.required}
           mapStateToOptions={state => state.dropdown.values}
           width={5}
+          required
         />
         <Field.DatePicker
           name="fieldDatePicker"
           label="Date"
           validate={fieldValidators.required}
           width={5}
+          required
         />
         <Field.TextArea
           name="fieldTextArea"
           label="Comment"
           validate={fieldValidators.required}
           width={5}
+          required
         />
       </Form>
     );

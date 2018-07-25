@@ -7,7 +7,9 @@ const InlineRow = ({
   width,
   value,
   labelVerticalAlign,
-  labelTextAlign
+  labelTextAlign,
+  required,
+  readOnly
 }) => (
   <Grid.Row style={{ paddingTop: 5, paddingBottom: 5 }}>
     <Grid.Column
@@ -17,6 +19,10 @@ const InlineRow = ({
       textAlign={labelTextAlign || 'right'}
     >
       <strong>{label}</strong>
+      {required &&
+        !readOnly && (
+          <span style={{ margin: '-.2em 0 0 .2em', color: '#db2828' }}>*</span>
+        )}
     </Grid.Column>
     <Grid.Column className="form-row-value">{value || children}</Grid.Column>
   </Grid.Row>

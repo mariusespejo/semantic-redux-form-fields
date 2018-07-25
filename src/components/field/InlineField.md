@@ -18,6 +18,7 @@ class Example extends React.Component {
             label="Name"
             validate={fieldValidators.required}
             labelWidth={labelWidth}
+            required
           />
           <InlineField.Dropdown
             name="fieldDropdown"
@@ -25,6 +26,7 @@ class Example extends React.Component {
             validate={fieldValidators.required}
             mapStateToOptions={state => state.dropdown.values}
             labelWidth={labelWidth}
+            required
           />
         </Grid>
       </Form>
