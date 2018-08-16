@@ -2,10 +2,20 @@ import React from 'react';
 import Field from './Field';
 import InlineRow from './InlineRow';
 
-const InlineField = ({ label, labelWidth, required, readOnly, ...rest }) => (
+const InlineField = ({
+  label,
+  labelWidth,
+  labelVerticalAlign,
+  labelTextAlign,
+  required,
+  readOnly,
+  ...rest
+}) => (
   <InlineRow
     label={label}
     width={labelWidth}
+    labelVerticalAlign={labelVerticalAlign}
+    labelTextAlign={labelTextAlign}
     required={required}
     readOnly={readOnly}
   >
