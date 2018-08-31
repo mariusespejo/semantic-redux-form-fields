@@ -9,9 +9,10 @@ const InlineRow = ({
   labelVerticalAlign,
   labelTextAlign,
   required,
-  readOnly
+  readOnly,
+  style
 }) => (
-  <Grid.Row style={{ paddingTop: 5, paddingBottom: 5 }}>
+  <Grid.Row style={style || { paddingTop: 5, paddingBottom: 5 }}>
     <Grid.Column
       className="form-row-label"
       width={width || 5}

@@ -9,6 +9,7 @@ const InlineField = ({
   labelTextAlign,
   required,
   readOnly,
+  rowStyle,
   ...rest
 }) => (
   <InlineRow
@@ -18,6 +19,7 @@ const InlineField = ({
     labelTextAlign={labelTextAlign}
     required={required}
     readOnly={readOnly}
+    style={rowStyle}
   >
     <Field {...rest} readOnly={readOnly} />
   </InlineRow>
