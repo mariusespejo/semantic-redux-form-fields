@@ -7,14 +7,19 @@ import 'react-datepicker/dist/react-datepicker.css';
 class FormDatePicker extends Component {
   convertToString = dateObj => moment(dateObj).format('MM/DD/YYYY');
   handleChange = value => {
-    const { input: { onChange } } = this.props;
+    const {
+      input: { onChange }
+    } = this.props;
     const stringDate = this.convertToString(value);
 
     onChange(stringDate);
   };
 
   componentWillReceiveProps(nextProps) {
-    const { input: { value }, defaultValue } = nextProps;
+    const {
+      input: { value },
+      defaultValue
+    } = nextProps;
     if (!value && defaultValue) this.handleChange(defaultValue);
   }
 
@@ -64,11 +69,7 @@ class FormDatePicker extends Component {
           placeholderText={placeholder}
           onBlur={onBlur}
           {...rest}
-        >
-          <div style={{ textAlign: 'center' }}>
-            Or type with format: <strong>MM/DD/YYYY</strong>
-          </div>
-        </DatePicker>
+        />
         {hasError && (
           <Label
             className="error-message"
