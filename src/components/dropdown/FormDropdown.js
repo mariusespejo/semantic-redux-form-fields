@@ -6,7 +6,9 @@ export const ReduxDropdown = connectedDropdown(Dropdown);
 
 class FormDropdown extends Component {
   handleChange = (e, { value, options }) => {
-    const { input: { onChange } } = this.props;
+    const {
+      input: { onChange }
+    } = this.props;
     onChange(value);
   };
 
@@ -55,7 +57,7 @@ class FormDropdown extends Component {
           selectOnBlur={touched}
           onBlur={e => {
             e.preventDefault();
-            onBlur(e);
+            onBlur();
           }}
           {...rest}
         />
