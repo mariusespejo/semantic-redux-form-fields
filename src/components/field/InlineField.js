@@ -26,8 +26,12 @@ const InlineField = ({
 );
 
 /** Shorthand alternatives to passing type prop */
-InlineField.Input = props => <InlineField type="input" {...props} />;
-InlineField.Dropdown = props => <InlineField type="dropdown" {...props} />;
-InlineField.DatePicker = props => <InlineField type="datePicker" {...props} />;
+InlineField.Input = props => <InlineField componentType="input" {...props} />;
+InlineField.Dropdown = props => (
+  <InlineField componentType="dropdown" {...props} />
+);
+InlineField.DatePicker = props => (
+  <InlineField componentType="datePicker" {...props} />
+);
 
 export default InlineField;

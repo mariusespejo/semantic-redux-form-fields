@@ -18,10 +18,10 @@ class Field extends React.Component {
   };
 
   render() {
-    const { type, ...rest } = this.props;
+    const { componentType, ...rest } = this.props;
 
     let fieldProps = {
-      component: this.getComponentType(type),
+      component: this.getComponentType(componentType),
       ...rest
     };
 
@@ -30,9 +30,9 @@ class Field extends React.Component {
 }
 
 /** Shorthand alternatives to passing type prop */
-Field.Input = props => <Field type="input" {...props} />;
-Field.TextArea = props => <Field type="textArea" {...props} />;
-Field.Dropdown = props => <Field type="dropdown" {...props} />;
-Field.DatePicker = props => <Field type="datePicker" {...props} />;
+Field.Input = props => <Field componentType="input" {...props} />;
+Field.TextArea = props => <Field componentType="textArea" {...props} />;
+Field.Dropdown = props => <Field componentType="dropdown" {...props} />;
+Field.DatePicker = props => <Field componentType="datePicker" {...props} />;
 
 export default Field;
