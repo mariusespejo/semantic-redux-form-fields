@@ -64,7 +64,9 @@ class FormDatePicker extends Component {
       >
         {label && <label>{label}</label>}
         <DatePicker
-          selected={selectedDate}
+          selected={
+            selectedDate && selectedDate.isValid() ? selectedDate : null
+          }
           onChange={this.handleChange}
           placeholderText={placeholder}
           onBlur={onBlur}
