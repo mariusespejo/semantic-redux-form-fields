@@ -1,6 +1,6 @@
 {
   "name": "semantic-redux-form-fields",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "A set of form field components combining Semantic UI React and Redux Form",
   "main": "lib/index.js",
   "scripts": {
