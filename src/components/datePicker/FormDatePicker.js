@@ -5,7 +5,8 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 class FormDatePicker extends Component {
-  convertToString = dateObj => moment(dateObj).format('MM/DD/YYYY');
+  convertToString = dateObj =>
+    moment(dateObj).format(this.props.dateFormat || 'MM/DD/YYYY');
   handleChange = value => {
     const {
       input: { onChange }
@@ -36,6 +37,7 @@ class FormDatePicker extends Component {
       placeholder,
       errorMessageStyle,
       inline,
+      dateFormat,
       ...rest
     } = this.props;
 
@@ -48,7 +50,8 @@ class FormDatePicker extends Component {
     }
 
     if (value && typeof value === 'string') {
-      if (value.length === 10) selectedDate = moment(value, 'MM/DD/YYYY');
+      if (value.length === 10)
+        selectedDate = moment(value, dateFormat || 'MM/DD/YYYY');
       else selectedDate = moment(value);
     }
 
@@ -70,6 +73,7 @@ class FormDatePicker extends Component {
           onChange={this.handleChange}
           placeholderText={placeholder}
           onBlur={onBlur}
+          dateFormat={dateFormat || 'MM/DD/YYYY'}
           {...rest}
         />
         {hasError && (
